@@ -1,0 +1,5 @@
+flask==2.3.3
+flask_sqlalchemy==3.0.3
+pymysql==1.0.3
+python-dotenv==1.0.0
+flask-mail==0.9.1

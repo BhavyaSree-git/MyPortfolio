@@ -1,0 +1,24 @@
+import React from "react";
+import Navbar from "@/components/portfolio/Navbar";
+import HeroSection from "@/components/portfolio/HeroSection";
+import AboutSection from "@/components/portfolio/AboutSection";
+import SkillsSection from "@/components/portfolio/SkillsSection";
+import ProjectsSection from "@/components/portfolio/ProjectsSection";
+import ResumeSection from "@/components/portfolio/ResumeSection";
+import ContactSection from "@/components/portfolio/ContactSection";
+import Footer from "@/components/portfolio/Footer";
+
+export default function Home() {
+  return (
+    <div className="bg-[#0a0a0f] min-h-screen" style={{ scrollBehavior: "smooth" }}>
+      <Navbar />
+      <HeroSection />
+      <AboutSection />
+      <SkillsSection />
+      <ProjectsSection />
+      <ResumeSection />
+      <ContactSection />
+      <Footer />
+    </div>
+  );
+}
