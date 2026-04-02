@@ -11,6 +11,6 @@ const API = axios.create({
 // Example API functions
 export const getProjects = () => API.get("/projects");
 export const getSkills = () => API.get("/skills");
-export const sendContact = (data) => API.post("/contact", data);
+export const sendContact = (data) => API.post("/api/contact", data);
 
 export default API;

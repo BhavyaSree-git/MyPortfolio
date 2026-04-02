@@ -26,7 +26,7 @@ python app.py
 4. Example request
 
 ```bash
-curl -X POST http://127.0.0.1:5000/contact \
+curl -X POST http://127.0.0.1:5000/api/contact \
   -H "Content-Type: application/json" \
   -d '{"name":"Alice","email":"alice@example.com","message":"Hello"}'
 ```

@@ -38,7 +38,7 @@ def index():
     return jsonify(status='ok')
 
 
-@app.route('/contact', methods=['POST'])
+@app.route('/api/contact', methods=['POST'])
 def contact():
     data = request.get_json() or {}
     name = data.get('name')
