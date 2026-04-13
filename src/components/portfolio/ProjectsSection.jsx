@@ -10,6 +10,7 @@ const projects = [
     subtitle: "Construction Industry Platform",
     featured: true,
     period: "Nov 2023 — Present",
+    externalUrl: "https://aecearth.io/",
     description:
       "A comprehensive construction project management platform connecting clients, consultants, contractors, vendors, and facility management teams. Streamlines project coordination, material management, and stakeholder collaboration in a unified system.",
     tags: ["Python", "Flask", "MySQL", "React", "REST APIs"],
@@ -41,6 +42,7 @@ const projects = [
   },
 ];
 
+/** @type {{ [key: string]: { iconBg: string; iconColor: string; tagBg: string; tagText: string; border: string } }} */
 const accentMap = {
   cyan: { iconBg: "bg-cyan-500/10", iconColor: "text-cyan-400", tagBg: "bg-cyan-500/10", tagText: "text-cyan-300", border: "hover:border-cyan-500/30" },
   teal: { iconBg: "bg-teal-500/10", iconColor: "text-teal-400", tagBg: "bg-teal-500/10", tagText: "text-teal-300", border: "hover:border-teal-500/30" },
@@ -75,7 +77,7 @@ export default function ProjectsSection() {
 
         <div className="grid sm:grid-cols-2 gap-6">
           {projects.map((project, i) => {
-            const colors = accentMap[project.accent];
+            const colors = accentMap[/** @type {keyof typeof accentMap} */ (project.accent)];
             const isFeatured = project.featured;
             
             return (
@@ -147,7 +149,17 @@ export default function ProjectsSection() {
                         <span className="text-sm font-semibold">View Full Details</span>
                         <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                       </button>
-                      
+                      {project.externalUrl && (
+                        <a
+                          href={project.externalUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex items-center justify-between p-4 rounded-xl bg-slate-800/70 border border-slate-700 text-cyan-300 hover:bg-slate-900 transition-all"
+                        >
+                          <span className="text-sm font-semibold">Visit Website</span>
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      )}
                       <div className="p-4 rounded-xl bg-slate-800/50 border border-slate-700 
                                       transition-all duration-300 
                                       hover:bg-emerald-500/5 hover:border-emerald-500/20 group">

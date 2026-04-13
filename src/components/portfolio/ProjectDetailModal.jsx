@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Calendar, Briefcase, CheckCircle2 } from "lucide-react";
+import { X, Calendar, Briefcase, CheckCircle2, ExternalLink } from "lucide-react";
 
 const features = [
   {
@@ -77,6 +77,9 @@ const impact = [
   "Enhanced visibility into project status, budgets, and resource allocation",
 ];
 
+/**
+ * @param {{ isOpen: boolean; onClose: () => void }} props
+ */
 export default function ProjectDetailModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
@@ -94,14 +97,14 @@ export default function ProjectDetailModal({ isOpen, onClose }) {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
           onClick={(e) => e.stopPropagation()}
-          className="relative w-full max-w-5xl bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl my-8"
+          className="relative w-full max-w-5xl max-h-[calc(100vh-4rem)] bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl my-8 overflow-hidden"
         >
           {/* Header */}
-          <div className="relative p-8 sm:p-10 border-b border-slate-800">
+          <div className="relative p-6 sm:p-10 border-b border-slate-800">
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-teal-500/5" />
             <button
               onClick={onClose}
-              className="absolute top-6 right-6 p-2 rounded-xl text-slate-500 hover:text-white hover:bg-slate-800 transition-all"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 rounded-xl text-slate-500 hover:text-white hover:bg-slate-800 transition-all z-10"
             >
               <X className="w-5 h-5" />
             </button>
@@ -125,11 +128,20 @@ export default function ProjectDetailModal({ isOpen, onClose }) {
                   <span className="text-sm font-medium">Nov 2023 — Present</span>
                 </div>
               </div>
+              <a
+                href="https://aecearth.io/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 mt-6 px-4 py-3 rounded-2xl border border-cyan-500/20 bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/15 transition-all"
+              >
+                Visit AECearth Website
+                <ExternalLink className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
           {/* Content */}
-          <div className="p-8 sm:p-10 space-y-10 max-h-[60vh] overflow-y-auto">
+          <div className="p-8 sm:p-10 space-y-10 max-h-[calc(100vh-18rem)] overflow-y-auto">
             {/* Overview */}
             <section>
               <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">

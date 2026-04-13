@@ -32,8 +32,11 @@ export default function Home() {
       </a>
 
       <a
-        href="https://wa.me/919491207140"
-        target="_blank"
+        href="#!"
+        onClick={(e) => {
+          e.preventDefault();
+          window.open("https://wa.me/919491207140", "_blank", "noopener,noreferrer");
+        }}
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
         className="fixed right-6 bottom-24 z-[60] inline-flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 p-2 text-white shadow-[0_20px_40px_rgba(16,185,129,0.25)] transition-transform duration-300 hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-emerald-300"
